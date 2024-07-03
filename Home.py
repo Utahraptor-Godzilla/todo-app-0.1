@@ -179,7 +179,7 @@ if st.session_state.sign:
             files = glob.glob("passwords/*")
             counter = 0
             for file in files:
-                if file.split("\\")[1].split("-")[0] == st.session_state.username:
+                if file.split("/")[1].split("-")[0] == st.session_state.username:
                     counter += 1
             if counter > 0:
                 st.session_state.matched = False
@@ -280,4 +280,3 @@ if st.session_state.con:
             st.session_state.con = False
             st.session_state.confirmed = False
             st.experimental_rerun()
-#app
